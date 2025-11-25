@@ -21,13 +21,11 @@ $stmt->execute();
 $result = $stmt->get_result();
 
 if ($result->num_rows > 0) {
-    // Jika sudah like → hapus like
     $stmt = $conn->prepare("DELETE FROM likes WHERE member_id = ? AND post_id = ?");
     $stmt->bind_param("ii", $member_id, $post_id);
     $stmt->execute();
     $liked = false;
 } else {
-    // Jika belum → tambahkan like
     $stmt = $conn->prepare("INSERT INTO likes (member_id, post_id) VALUES (?, ?)");
     $stmt->bind_param("ii", $member_id, $post_id);
     $stmt->execute();
@@ -35,7 +33,7 @@ if ($result->num_rows > 0) {
 }
 
 
-// Hitung ulang jumlah like
+// Hitung jumlah like
 $stmt = $conn->prepare("SELECT COUNT(*) AS total FROM likes WHERE post_id = ?");
 $stmt->bind_param("i", $post_id);
 $stmt->execute();

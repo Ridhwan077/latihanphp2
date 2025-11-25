@@ -14,7 +14,7 @@ if (!isset($_SESSION['member_id'])) {
 <html lang="en">
 <head>
 <?php include 'includes/head.php'; ?>
-<link rel="stylesheet" href="/latihanphp1/assets/css/style_dashboard.css">
+<link rel="stylesheet" href="/assets/css/style_dashboard.css">
 </head>
 <body>
 <?php include 'includes/menu.php'; ?>

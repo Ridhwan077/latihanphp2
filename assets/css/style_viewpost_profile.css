@@ -6,21 +6,21 @@
     object-fit: contain;
   }
   
-  /* untuk gambar landscape: lebarnya maksimal full container, tinggi disesuaikan */
+  
   .post-image.landscape {
     width: 60%;
     height: auto;
-    max-height: 700px; /* atur sesuai kebutuhan */
+    max-height: 700px; 
   }
   
-  /* untuk gambar portrait: batasi tinggi supaya tidak terlalu memanjang */
+  
   .post-image.portrait {
     width: auto;
     max-width: 100%;
-    max-height: 500px; /* batasi tinggi portrait */
+    max-height: 500px; 
   }
   
-  /* opsional: responsif kecil layar */
+  
   @media (max-width: 600px) {
     .post-image.landscape { max-height: 400px; }
     .post-image.portrait  { max-height: 300px; }
@@ -42,16 +42,16 @@
     background-color: #0056b3;
   }
   .post {
-    max-width: 1100px;     /* batas lebar agar tetap enak dibaca */
+    max-width: 1100px;     
     margin: 40px auto;
-    text-align: left;    /* tetap di tengah halaman secara keseluruhan */
-    line-height: 1.6;     /* biar paragraf enak dibaca */
+    text-align: left;    
+    line-height: 1.6;     
   }
   .post-header {
     text-align: center;
   }
   .post-content-wrapper {
-    text-align: left;
+    text-align: center;
     margin-bottom: 15px;
   }
 
@@ -80,4 +80,28 @@
 
 .mybtn-edit {
     background-color: #1cc88a;
+}
+
+.like-info {
+  display: inline-block;
+  font-size: 16px;
+  color: #555;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  padding: 6px 12px;
+  border-radius: 20px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  margin-top: 10px;
+  transition: all 0.3s ease;
+}
+
+.like-info:hover {
+  background-color: #ffeef0;
+  border-color: #ffccd5;
+  color: #e63946;
+}
+
+.like-info span {
+  font-weight: bold;
+  color: #e63946; /* warna merah lembut untuk angka like */
 }

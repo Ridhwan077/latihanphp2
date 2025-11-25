@@ -1,6 +1,7 @@
 <?php
 session_start();
-include 'config.php'; // koneksi database
+include 'config.php'; //koneksi database
+include 'includes/functions.php';
 
 if (!isset($_SESSION['username'])) {
     header("Location: index.php");
@@ -14,6 +15,7 @@ if (!isset($_GET['post_id'])) {
 }
 
 $post_id = intval($_GET['post_id']); // hindari SQL injection
+$total_likes = getLikeCount($conn, $post_id);//dapatkan jumlah like
 
 // Query untuk mengambil data postingan beserta nama pembuatnya
 $sql = "SELECT posts.*, members.username 
@@ -86,6 +88,9 @@ $post = $result->fetch_assoc();
     <div class="post-header">
     <p class="post-date"><?php echo htmlspecialchars($post['created_at']); ?></p>
     <h2 class="post-title"><?php echo htmlspecialchars($post['title']); ?></h2>
+    <div class="like-info">
+    ❤️ <span id="like-count"><?= $total_likes ?></span> Likes
+</div>
     <p class="post-author">by <?php echo htmlspecialchars($_SESSION['username']); ?></p>
     </div>
 
@@ -100,10 +105,11 @@ $post = $result->fetch_assoc();
       </p>
     </div>
 
-
     <div class="post-actions">
     <a href="update_post.php?post_id=<?= (int)$post['post_id'] ?>" class="mybtn mybtn-edit">Edit</a>
+    <?php if ($_SESSION['member_id'] == $post['member_id']): ?>
     <a href="delete_post.php?id=<?= $post['post_id'] ?>" class="mybtn mybtn-delete" onclick="return confirm('Yakin ingin menghapus postingan ini?');">Delete</a>
+    <?php endif; ?>
 </div>
 
 

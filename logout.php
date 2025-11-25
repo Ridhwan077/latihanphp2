@@ -1,6 +1,6 @@
 <?php
-session_start(); // aktifkan session
-session_destroy(); // hapus semua data session
+session_start(); 
+session_destroy(); 
 
 // arahkan kembali ke halaman login
 header("Location: index.php");

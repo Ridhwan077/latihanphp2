@@ -1,0 +1,10 @@
+Array
+(
+    [post_id] => 7
+    [content] => mantap
+)
+Array
+(
+    [post_id] => 7
+    [content] => mantap
+)

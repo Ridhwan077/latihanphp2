@@ -2,7 +2,6 @@
 session_start();
 include 'config.php';
 
-// Pastikan user sudah login
 if (!isset($_SESSION['member_id'])) {
     echo "<p>⚠️ Anda harus login terlebih dahulu.</p>";
     head("Location: index.php");

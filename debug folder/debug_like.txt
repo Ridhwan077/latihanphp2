@@ -1,0 +1,8 @@
+Array
+(
+    [post_id] => null
+)
+Array
+(
+    [post_id] => 3
+)

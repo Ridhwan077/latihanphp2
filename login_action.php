@@ -23,7 +23,7 @@ if ($result->num_rows > 0) {
     $_SESSION['member_id'] = $row['member_id'];
     $_SESSION['username'] = $row['username'];
 
-    echo "Login berhasil! Selamat datang, " . $_SESSION['username'];
+    //echo "Login berhasil! Selamat datang, " . $_SESSION['username'];
     // arahkan ke halaman lain, misalnya dashboard
     header("Location: dashboard.php");
 } else {
