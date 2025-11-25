@@ -1,0 +1,158 @@
+/* aturan umum */
+.post-image {
+    display: block;
+    margin: 20px auto;
+    border-radius: 8px;
+    object-fit: contain;
+  }
+  
+  /* untuk gambar landscape: lebarnya maksimal full container, tinggi disesuaikan */
+  .post-image.landscape {
+    width: 60%;
+    height: auto;
+    max-height: 700px; /* atur sesuai kebutuhan */
+  }
+  
+  /* untuk gambar portrait: batasi tinggi supaya tidak terlalu memanjang */
+  .post-image.portrait {
+    width: auto;
+    max-width: 100%;
+    max-height: 500px; 
+  }
+  
+  /* opsional: responsif kecil layar */
+  @media (max-width: 600px) {
+    .post-image.landscape { max-height: 400px; }
+    .post-image.portrait  { max-height: 300px; }
+  }
+
+  .back-button {
+    display: inline-block;
+    margin: 20px 0;
+    padding: 10px 18px;
+    background-color: #007BFF;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+  }
+  
+  .back-button:hover {
+    background-color: #0056b3;
+  }
+  .post {
+    max-width: 1100px;     
+    margin: 40px auto;
+    text-align: left;    
+    line-height: 1.6;     
+  }
+  .post-header {
+    text-align: center;
+  }
+  .post-content-wrapper {
+    text-align: left;
+    margin-bottom: 15px;
+  }
+
+  button.like-btn {
+    background-color: #f0f0f0;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 16px;
+    color: #444;
+    transition: all 0.2s ease-in-out;
+}
+
+button.like-btn:hover {
+    background-color: #ddd;
+}
+
+button.like-btn.liked {
+    color: red;
+    background-color: #868080;
+    transform: scale(1.05);
+}
+
+  /* Container komentar */
+div.comments-section {
+  margin-top: 30px;
+  padding: 15px;
+  border-top: 1px solid #ccc;
+}
+
+/* Judul komentar */
+div.comments-section h3 {
+  text-align: center;
+  margin-bottom: 10px;
+  font-size: 1.2em;
+  color: #000000;
+}
+
+/* List komentar */
+div#comments-list {
+  max-height: 400px; 
+  overflow-y: auto;   
+  display: flex;
+  flex-direction: column;
+  gap: 15px;          
+}
+
+/* Setiap komentar */
+div.comment {
+  background-color: #f9f9f9;
+  padding: 10px 15px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+}
+
+/* Username dan tanggal */
+div.comment strong {
+  color: #000000;
+  font-weight: 600;
+}
+
+div.comment p {
+  margin: 5px 0 0 0;
+  line-height: 1.4;
+  color: #555;
+  white-space: pre-wrap; 
+}
+
+/* Form komentar */
+div#comment-form {
+  margin-top: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+#comment-form textarea {
+  resize: vertical;
+  min-height: 60px;
+  padding: 8px;
+  font-size: 0.95em;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+#comment-form button {
+  align-self: flex-end;
+  padding: 6px 12px;
+  font-size: 0.95em;
+  border: none;
+  border-radius: 6px;
+  background-color: #000000;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+#comment-form button:hover {
+  background-color: #595a5c;
+  color: #e9e9e9;
+}
+
+  
