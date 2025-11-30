@@ -1,20 +1,22 @@
-  name: Hello World Workflow
+name: Hello World Workflow
+
 on:
- push:
-   branches: [ master ] # Pastikan nama branch sesuai!
+  push:
+    branches: [ master ]
+
 jobs:
- greeting:
-   runs-on: my-laptop # Ganti dengan label yang dibuat
+  greeting:
+    runs-on: my-laptop   # pastikan label ini sesuai runner kamu
 
- steps:
-   - name: Say Hello
-      run: echo "Hello, World! 👋"
+    steps:
+      - name: Say Hello
+        run: echo "Hello, World! 👋"
 
-   - name: Show Date and Time
-    run: echo "Current time is $(date) ⏱️"
+      - name: Show Date and Time
+        run: echo "Current time is $(date) ⏱️"
 
-   - name: Show GitHub Info
-   run: |
-    echo "Repository: ${{ github.repository }}"
-    echo "Branch: ${{ github.ref }}"
-    echo "Commit: ${{ github.sha }}"
+      - name: Show GitHub Info
+        run: |
+          echo "Repository: ${{ github.repository }}"
+          echo "Branch: ${{ github.ref }}"
+          echo "Commit: ${{ github.sha }}"
