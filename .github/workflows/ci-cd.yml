@@ -9,12 +9,12 @@ name: CI/CD Auto Pull and Rebuild
 # 2. Manual trigger melalui GitHub Actions tab
 on:
   push:
-    branches: [ master ]  # Hanya berjalan ketika push ke master
+    branches: master  # Hanya berjalan ketika push ke master
   workflow_dispatch:      # Bisa dijalankan manual juga
 
 jobs:
   deploy-ridhwan:
-    runs-on: [my-laptop]
+    runs-on: my-laptop
     
     steps:
     # Step 0: Detect project path dynamically
