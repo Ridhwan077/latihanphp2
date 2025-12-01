@@ -20,7 +20,7 @@ jobs:
     # Step 0: Detect project path dynamically
     - name: Set project path
       run: |
-        PROJECT_PATH=$(find /home -name 'latihanphp2' -type d 2>/dev/null | head -1)
+        PROJECT_PATH=$($HOME/latihanphp2)
         if [ -z "$PROJECT_PATH" ]; then
           echo "❌ Error: Folder latihanphp2 tidak ditemukan di /home"
           echo "Pastikan project sudah di-clone ke salah satu user directory"
@@ -85,7 +85,7 @@ jobs:
     # Step 0: Detect project path dynamically
     - name: Set project path
       run: |
-        PROJECT_PATH=$(find /home -name 'latihanphp2' -type d 2>/dev/null | head -1)
+        PROJECT_PATH=$($HOME/latihanphp2)
         if [ -z "$PROJECT_PATH" ]; then
           echo "❌ Error: Folder latihanphp2 tidak ditemukan di /home"
           echo "Pastikan project sudah di-clone ke salah satu user directory"
