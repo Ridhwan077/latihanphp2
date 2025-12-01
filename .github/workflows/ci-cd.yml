@@ -14,7 +14,7 @@ on:
 
 jobs:
   deploy-ridhwan:
-    runs-on: self-hosted
+    runs-on: [self-hosted]
     
     steps:
     # Step 0: Detect project path dynamically
